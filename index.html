@@ -22,12 +22,10 @@
     
     var x = 0;
     
-    for(var a in images){
-    images[a].addEventListener('load', function() {
-        context.drawImage(images[a], x, 0, 100, 100);
+    images[0].addEventListener('load', function() {
+        context.drawImage(images[0], x, 0, 100, 100);
         x += 100;
     }, false);
-    }
 
 })();
 </script>
