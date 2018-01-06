@@ -17,14 +17,15 @@
     var images =[];
     for(var i in srcs){
     var images[i] = new Image();
+    alert(i);
     images[i].src = srcs[i];
     }
     
     var x = 0;
     
-    for(var i in images){
-    images[i].addEventListener('load', function() {
-        context.drawImage(images[i], x, 0, 100, 100);
+    for(var a in images){
+    images[a].addEventListener('load', function() {
+        context.drawImage(images[a], x, 0, 100, 100);
         x += 100;
     }, false);
 
