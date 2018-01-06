@@ -7,17 +7,27 @@
     var canvas = document.getElementById('canvas');
     var context = canvas.getContext('2d');
 
-    var image = new Image();
-    image.src = 'j.bmp';
-    image.addEventListener('load', function() {
-        context.drawImage(image, 0, 0, 100, 100);
-    }, false);
+    var srcs = {
+    'a.bmp',
+    'b.bmp',
+    'd.bmp',
+    'e.bmp',
+    };
     
-    var image2 = new Image();
-    image2.src = 'a.jpg';
-    image2.addEventListener('load', function() {
-        context.drawImage(image2, 100, 0, 100, 100);
+    var images =[];
+    for(var i in srcs){
+    var images[i] = new Image();
+    images[i].src = srcs[i];
+    }
+    
+    var x = 0;
+    
+    for(var i in images){
+    images[i].addEventListener('load', function() {
+        context.drawImage(images[i], x, 0, 100, 100);
+        x += 100;
     }, false);
+
 })();
 </script>
 
