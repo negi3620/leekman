@@ -7,26 +7,33 @@
     var canvas = document.getElementById('canvas');
     var context = canvas.getContext('2d');
 
-    var srcs = {
-    'a.bmp',
-    'b.bmp',
-    'd.bmp',
-    'e.bmp',
-    };
-    
-    var images =[];
-    for(var i in srcs){
-    var images[i] = new Image();
-    images[i].src = 'a.bmp';
+    var srcs = [
+        'a.bmp',
+        'b.bmp',
+        'd.bmp',
+        'e.bmp',
+    ];
+    var images = [];
+    for (var i in srcs) {
+        images[i] = new Image();
+        images[i].src = srcs[i];
     }
-    
-    var x = 0;
-    
-    images[0].addEventListener('load', function() {
-        context.drawImage(images[0], x, 0, 100, 100);
-        x += 100;
-    }, false);
 
+    var loadedCount = 1;
+    for (var i in images) {
+        images[i].addEventListener('load', function() {
+            if (loadedCount == images.length) {
+                var x = 0;
+                var y = 0;
+                for (var j in images) {
+                    context.drawImage(images[j], x, y, 150, 100);
+                    x += 50;
+                    y += 70;
+                }
+            }
+            loadedCount++;
+        }, false);
+    }
 })();
 </script>
 
