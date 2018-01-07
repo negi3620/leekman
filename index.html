@@ -19,9 +19,31 @@
         context.drawImage(image2, 80, 0, 80, 80);
     }, false);
     
+    
+    var canvas2 = document.getElementById('canvas');
+    var srcs = [
+    	'a.bmp',
+    	'b.bmp',
+    	'd.bmp',
+    	'e.bmp',
+    ];
+    
+    var images = [];
+    for (var i in srcs) {
+    	images[i] = new Image();
+    	images[i].src = srcs[i];
+    }
+    
+    var x = 0;
+    for (var i In Images) {
+    	images[i].addEventListener('load',function(){
+    		context2.drawImage(Images[i] , x ,0 , 80 , 80 );
+    		x +=80;
+    	},false);
+    }
 })();
 </script>
 
 <h1>Hello World</h1>
 </body>
-</html>
+<tml>
