@@ -68,6 +68,7 @@ function unknown() {
 
 
     var loadedCount = 1;
+    var y = 160;
     for (var i in images) { //各画像を連結して１つの画像にする
         images[i].addEventListener('load', function() {
             if (loadedCount == images.length) { //よくわからん　これ無いと座標がすべて同じ値になる
@@ -80,5 +81,5 @@ function unknown() {
             loadedCount++;
         }, false);
     }
-    canvas2.setAttribute("width", x);
+    canvas2.setAttribute("width", y);
 };
