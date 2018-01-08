@@ -76,10 +76,12 @@ function unknown() {
                 for (var j in images) {
                     context2.drawImage(images[j], x, 0, 80, 80); //カンバスに画像を描画
                     x += 80;
+                    if(i == images.length){
+                        canvas2.setAttribute("width", x);
+                    }
                 }
             }
             loadedCount++;
         }, false);
     }
-    canvas2.setAttribute("width", y);
 };
