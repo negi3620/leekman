@@ -62,8 +62,6 @@ function unknown() {
     		case 'x' : images[a].src = srcs[21];   break;
     		case 'y' : images[a].src = srcs[22];   break;
     		case 'z' : images[a].src = srcs[23];   break;
-    		case 'あ': images[a].src = srcs[0]; break;
-    		case 'か': images[a].src = srcs[8]; image
     	}
     }
     
@@ -82,5 +80,5 @@ function unknown() {
             loadedCount++;
         }, false);
     }
-
+    canvas2.setAttribute("width", x);
 };
